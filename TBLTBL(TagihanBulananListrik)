@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+int main(){
+    float Power_kulkas,Power_tv,Power_lampu,Power_mesincuci;
+    float Time_kulkas,Time_tv,Time_lampu,Time_mesincuci;
+    float tagihanListrik = 0, kWh=0;
+    int pilihan;
+
+
+    cout<<"====================Selamat datang di penghitung Listrik bulanan============================"<< endl;
+    cout<<"1. Start"<<endl<<"2.End"<<endl; cin>>pilihan;
+    switch(pilihan){
+        case 1:
+        cout<<"Berapa watt kulkas mu?";cin>>Power_kulkas;cout<<"Berapa lama kamu menggunakan kulkas dalam sehari(dalam jam)?";cin>>Time_kulkas;cout<<endl;
+        cout<<"Berapa watt TV mu?";cin>>Power_tv;cout<<"Berapa lama kamu menggunakan TV dalam sehari(dalam jam)?";cin>>Time_tv;cout<<endl;
+        cout<<"Berapa watt lampu mu?";cin>>Power_lampu;cout<<"Berapa lama kamu menggunakan lampu dalam sehari(dalam jam)?";cin>>Time_lampu;cout<<endl;
+        cout<<"Berapa watt mesin cuci mu?";cin>>Power_mesincuci;cout<<"Berapa lama kamu menggunakan mesin cuci dalam sehari(dalam jam)?";cin>>Time_mesincuci;cout<<endl;
+        
+        kWh= kWh+(Time_kulkas*Power_kulkas)+(Time_tv*Power_tv)+(Time_lampu*Power_lampu)+(Time_mesincuci*Power_mesincuci);
+        tagihanListrik= tagihanListrik+(kWh/1000*1300*30);
+        cout<<"Jumlah energi listrik                      :    "<<kWh<<" kWh"<<endl;
+        cout<<"Jumlah tagihan listrik bulanan anda adalah : Rp."<<tagihanListrik;
+        cout<<"\n"<<"terimakasih telah menggunakan layanan kami :)"; 
+        break;
+
+        case 2:
+        cout<<"terimakasih telah menggunakan layanan kami :)";return 0;
+
+        default:
+        cout<<"Invalid Input!!";
+    }
+    
+    
+    return 0;
+}
